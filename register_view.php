@@ -18,11 +18,23 @@
     <p class="error"><?php echo $_GET['error']; ?></p>
     <?php } ?>
 
-    <label>아이디</label>
-    <input type="text" placeholder="아이디..." name="user_id">
+    <?php if(isset($_GET['success'])) { ?>
+    <p class="success"><?php echo $_GET['success']; ?></p>
+    <?php } ?>
 
+    <label>아이디</label>
+    <?php if(isset($_GET['user_id'])) { ?>
+        <input type="text" placeholder="아이디..." name="user_id" value ="<?php echo $_GET['user_id']; ?>">
+    <?php }  else { ?>
+        <input type="text" placeholder="아이디..." name="user_id">
+    <?php } ?>
+    
     <label>닉네임</label>
-    <input type="text" placeholder="닉네임..." name="user_nick">
+    <?php if(isset($_GET['user_nick'])) { ?>
+        <input type="text" placeholder="닉네임..." name="user_nick" value ="<?php echo $_GET['user_nick']; ?>">
+    <?php }  else { ?>
+        <input type="text" placeholder="닉네임..." name="user_nick">
+    <?php } ?>
 
     <label>비밀번호</label>
     <input type="password" placeholder="비밀번호..." name="user_pass1">
@@ -31,7 +43,7 @@
     <input type="password" placeholder="비밀번호..." name="user_pass2">
 
     <button type="submit" name="save">저장</button>
-    <a href="" class="save">이미 회원이신가요? (로그인 페이지)</a>
+    <a href="login_view.php" class="save">이미 회원이신가요? (로그인 페이지)</a>
 
     </form>
 

@@ -1,7 +1,12 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>즐코 My Page</title>
+	<title>My Page</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -33,31 +38,32 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" action="logout.php" method="post">
+				<form class="login100-form validate-form" method="post">
 					<span class="login100-form-logo">
 						<i class="zmdi zmdi-landscape"></i>
 					</span>
 
 					<span class="login100-form-title p-b-20 p-t-27">My Page</span>
 					<div class="text-center p-t-10">
-						<span class="welcome">??? 회원님 환영합니다!</span>
+						<span class="welcome"><?php echo $_SESSION['mb_nick']; ?> 회원님 환영합니다!</span>
 					</div>
 
 					<table class="type02">
 						<tr>
 							<th scope="row">가입 순서</th>
-							<td>내용이 들어갑니다.</td>
+							<td><?php echo $_SESSION['no']; ?></td>
 						</tr>
 						<tr>
 							<th scope="row">아이디</th>
-							<td>내용이 들어갑니다.</td>
+							<td><?php echo $_SESSION['mb_id']; ?></td>
 						</tr>
 					</table>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">로그아웃</button>
+						<button type="button" onclick="location.href='../logout.php'" class="login100-form-btn">로그아웃</button>
+						<button type="button" onclick="location.href='../destroy_id.php'" class="login100-form-btn">회원탈퇴</button>
 					</div>
-
+					
 
 				</form>
 			</div>
