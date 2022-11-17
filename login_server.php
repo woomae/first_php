@@ -54,9 +54,15 @@ if(isset($_POST['user_id']) && isset($_POST['user_pass1']))
                 $_SESSION['mb_id'] = $row['mb_id'];
                 $_SESSION['mb_nick'] = $row['mb_nick'];
                 $_SESSION['no'] = $row['no'];
-
-                header('location: mypage/mypage.php');
-                exit();
+                if($user_id ==='root'){
+                    header('location: root_view.php');
+                    exit();
+                }
+                else{
+                    header('location: mypage/mypage.php');
+                    exit();
+                }
+                
             }
             else
             {
