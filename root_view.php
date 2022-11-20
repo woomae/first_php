@@ -17,13 +17,12 @@ include "db.php";
 </head>
 <body>
     <h2>* 관리자 페이지 *</h2>
-    <p>"<?php echo "관리자" ?>"님, 안녕하세요.</p>
+    <p>관리자님 안녕하세요.</p>
     <p>
         
-        
-        
         <a href="list.php" class="bar">회원 관리</a>
-        <a href="logout.php">로그아웃</a>
+        <a href="search.php" class="bar">회원 검색</a>
+        <a href="logout.php"">로그아웃</a>
     </p>
     <hr>
 </body>

@@ -46,14 +46,14 @@ if(isset($_POST['user_id']) && isset($_POST['user_pass1']))
             // echo '<br>';
             // var_dump($row);// 더많은 정보 출력
             $row = mysqli_fetch_assoc($result);
-            $hash = $row['password'];
+            $check = $row['password'];
             
 
-            if(password_verify($user_pass1, $hash))
+            if($user_pass1 === $check)
             {
-                $_SESSION['mb_id'] = $row['mb_id'];
-                $_SESSION['mb_nick'] = $row['mb_nick'];
-                $_SESSION['no'] = $row['no'];
+                $_SESSION['mb_id'] = $array['mb_id'];
+                $_SESSION['mb_nick'] = $array['mb_nick'];
+                $_SESSION['no'] = $array['no'];
                 if($user_id ==='root'){
                     header('location: root_view.php');
                     exit();

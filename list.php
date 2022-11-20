@@ -69,23 +69,13 @@ if($e_pageNum > $total_page){
         table a{text-decoration:none;color:#000;border:1px solid #333;display:inline-block;padding:3px 5px;font-size:12px;border-radius:5px}
         table a:hover{border:0 none;background:rgb(0, 132, 255);color:#fff}
     </style>
-    <script type="text/javascript">
-        function del_check(idx){
-            var i = confirm("정말 삭제하시겠습니까?\n삭제한 아이디는 복원하실 수 없습니다.");
-
-            if(i == true){
-                // alert("delete.php?u_idx="+idx);
-                location.href = "delete.php?u_idx="+idx;
-            };
-        };
-    </script>
+    
 </head>
 <body>
     <h2>* 관리자 페이지 *</h2>
     <p>"<?php echo "관리자"; ?>"님, 안녕하세요.</p>
     <p>
         <a href="root_view.php" class="bar">홈으로</a>
-        
         <a href="list.php" class="bar">회원 관리</a>
         <a href="logout.php">로그아웃</a>
     </p>
@@ -125,8 +115,8 @@ if($e_pageNum > $total_page){
             <td><?php echo $cnt; ?></td>
             <td><?php echo $array["mb_nick"]; ?></td>
             <td><?php echo $array["mb_id"]; ?></td>
-            <td><a href="edit.php?u_idx=<?php echo $array["idx"]; ?>">수정</a></td>
-            <td><a href="#" onclick="del_check(<?php echo $array["idx"]; ?>)">삭제</a></td>
+            <td><a href="edit.php?mb_id=<?php echo $array["mb_id"]; ?>">수정</a></td>
+            <td><a href="delete.php?mb_id=<?php echo $array["mb_id"]; ?>" >삭제</a></td>
         </tr>
         <?php  
             /* $i++; */

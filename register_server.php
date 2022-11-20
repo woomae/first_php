@@ -51,9 +51,7 @@ if(isset($_POST['user_id']) && isset($_POST['user_nick']) && isset($_POST['user_
         exit();
     }
     else{
-        //암호화
-
-        $user_pass1 = password_hash($user_pass1, PASSWORD_DEFAULT); // 단방향 암호
+        
         
         // 아이디,닉네임 중복체크
 
