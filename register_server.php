@@ -1,7 +1,5 @@
 <?php
-
 include('db.php');
-
 if(isset($_POST['user_id']) && isset($_POST['user_nick']) && isset($_POST['user_pass1']) && isset($_POST['user_pass2']))
 {
     //보안강화(시큐어코딩)
@@ -86,13 +84,4 @@ else
     header("location: register_view.php?error=알수없는 오류가 발생하였습니다.&$user_info");
     exit();
 }
-
-
-
-
-
-
-
-
-
 ?>

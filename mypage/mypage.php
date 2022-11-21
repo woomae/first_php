@@ -1,8 +1,6 @@
 <?php
 session_start();
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,34 +43,22 @@ session_start();
 
 					<span class="login100-form-title p-b-20 p-t-27">My Page</span>
 					<div class="text-center p-t-10">
-						<span class="welcome"><?php echo $_SESSION['mb_nick']; ?> 회원님 환영합니다!</span>
+						<span class="welcome"> 회원님 환영합니다!</span>
 					</div>
 
 					<table class="type02">
-						<tr>
-							<th scope="row">가입 순서</th>
-							<td><?php echo $_SESSION['no']; ?></td>
-						</tr>
-						<tr>
-							<th scope="row">아이디</th>
-							<td><?php echo $_SESSION['mb_id']; ?></td>
-						</tr>
+						
 					</table>
-
 					<div class="container-login100-form-btn">
 						<button type="button" onclick="location.href='../logout.php'" class="login100-form-btn">로그아웃</button>
 						<button type="button" onclick="location.href='../destroy_id.php'" class="login100-form-btn">회원탈퇴</button>
 					</div>
 					
-
 				</form>
 			</div>
 		</div>
 	</div>
-	
-
 	<div id="dropDownSelect1"></div>
-	
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
@@ -89,6 +75,5 @@ session_start();
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
-
 </body>
 </html>
